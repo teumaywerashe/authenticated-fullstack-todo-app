@@ -1,4 +1,5 @@
-const Task = require('../module/tasks'); // capitalize for clarity
+const Task = require('../module/tasks');
+
 const User = require('../module/user');
 
 

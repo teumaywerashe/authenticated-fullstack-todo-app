@@ -7,6 +7,10 @@ const Tasks = new mongoose.Schema({
     dueDate: {
         type: Date,
         default: Date.now
+    },
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user',
     }
-})
+}, { timestamps: true })
 module.exports = mongoose.model('tasks', Tasks)

@@ -4,28 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>to do app</title>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-    <link rel="stylesheet" href="todolist.css">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="input-container">
+    <div class="container">
+        <!-- LOGIN FORM -->
+        <div class="form-box" id="login-box">
+            <h2>Login</h2>
+            <form>
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter email" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter password" required>
+                </div>
+                <p id="login-confirm"></p>
+                <button type="submit" class="login-btn btn">Login</button>
+                <p class="switch">
+                    Don't have an account?
+                    <a href="#" onclick="showSignup()">Sign up</a>
+                </p>
+            </form>
+        </div>
 
-        <input class="text-input" type="text" placeholder="ToDo Name">
-        <input class="date-input" type="date">
-        <button class="add-button">Add</button>
+        <!-- SIGNUP FORM -->
+        <div class="form-box hidden" id="signup-box">
+            <h2>Sign Up</h2>
+            <form>
+                <div class="input-group">
+                    <label for="signup-username">Username</label>
+                    <input type="text" id="signup-username" placeholder="Choose username" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter email" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create password" required>
+                </div>
+                <p id="signup-confirm"></p>
+                <button type="submit" class="signup-btn btn">Sign Up</button>
+                <p class="switch">
+                    Already have an account?
+                    <a href="#" onclick="showLogin()">Login</a>
+                </p>
+            </form>
+        </div>
     </div>
-    <div class="display-container"></div>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./todolist.js">
+    <script src="index.js">
     </script>
-
-
 </body>
 
 </html>

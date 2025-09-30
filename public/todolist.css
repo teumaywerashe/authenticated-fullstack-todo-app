@@ -1,4 +1,4 @@
-        /* body {
+    /* body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,70 +80,82 @@ p {
         grid-template-columns: 130px 90px 80px;
     }
 } */
-        
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-items: center;
-            align-items: center;
-            height: 100vh;
-            width: auto;
-        }
-        
-        .input-container,
-        .display-container {
-            row-gap: 5px;
-            column-gap: 5px;
-            align-items: center;
-        }
-        
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        background-color: #1e1e2f;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #2575fc;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+    }
+    
+    .input-container,
+    .display-container {
+        row-gap: 5px;
+        column-gap: 5px;
+        align-items: center;
+        background-color: white;
+        padding: 20px;
+    }
+    
+    .input-container {
+        display: grid;
+        grid-template-columns: 200px 150px 100px;
+    }
+    
+    .display-container {
+        height: auto;
+        display: grid;
+        padding: 10px;
+        grid-template-columns: 200px 150px 100px;
+    }
+    
+    .input-container {
+        margin-bottom: 10px;
+    }
+    
+    .add-button {
+        background-color: green;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .delete-button,
+    .edit-button {
+        font-size: 26px;
+        color: black;
+        margin-left: 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .add-button,
+    .text-input,
+    .date-input,
+    .edit-button,
+    .delete-button {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+    
+    @media (max-width:960) {
         .input-container {
             display: grid;
-            grid-template-columns: 200px 150px 100px;
+            grid-template-columns: 50px 20px 50px;
         }
-        
         .display-container {
             display: grid;
-            grid-template-columns: 200px 150px 100px;
+            grid-template-columns: 50px 20px 50px;
         }
-        
-        .input-container {
-            margin-bottom: 10px;
-        }
-        
-        .add-button {
-            background-color: green;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-        
-        .delete-button,
-        .edit-button {
-            font-size: 26px;
-            color: black;
-            margin-left: 20px;
-            /* background-color: rgb(109, 39, 39); */
-            border: none;
-            cursor: pointer;
-        }
-        
-        .add-button,
-        .text-input,
-        .date-input,
-        .edit-button,
-        .delete-button {
-            font-size: 16px;
-            padding: 5px 10px;
-        }
-        
-        @media (max-width:960) {
-            .input-container {
-                display: grid;
-                grid-template-columns: 50px 20px 50px;
-            }
-            .display-container {
-                display: grid;
-                grid-template-columns: 50px 20px 50px;
-            }
-        }
+    }

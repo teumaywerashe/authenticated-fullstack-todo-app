@@ -2,7 +2,6 @@ const Task = require('../module/tasks');
 
 const User = require('../module/user');
 
-
 // ---------------- GET ALL TASKS FOR LOGGED-IN USER ----------------
 const getAllLists = async(req, res) => {
     try {
@@ -16,6 +15,7 @@ const getAllLists = async(req, res) => {
 };
 
 // ---------------- GET SINGLE TASK ----------------
+
 const getSingleList = async(req, res) => {
     try {
         const { id: taskID } = req.params;

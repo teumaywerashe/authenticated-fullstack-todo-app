@@ -2,6 +2,24 @@ const nameDOM = document.querySelector('.text-input')
 const dueDateDOM = document.querySelector('.date-input')
 const container = document.querySelector('.display-container')
 const addBtn = document.querySelector('.add-button')
+const logoutBtn = document.getElementById('logout-btn')
+
+// const profileUserName = document.getElementById('user-name')
+// const username = localStorage.getItem('username')
+// profileUserName.textContent = username
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const profileUserName = document.getElementById('user-name');
+    const username = localStorage.getItem('username');
+
+    if (profileUserName && username) {
+        profileUserName.textContent = username;
+    }
+
+    document.getElementById('profile-photo').alt = username.charAt(0)
+});
 
 const display = async() => {
     try {
@@ -15,7 +33,7 @@ const display = async() => {
         })
 
         if (data.length < 1) {
-            container.innerHTML = `<p>empty list</p>`
+            container.innerHTML = `<p>no to do to show </p>`
             return
         }
 
@@ -77,6 +95,12 @@ container.addEventListener('click', async(e) => {
             console.log(err)
         }
     }
+})
+
+
+logoutBtn.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    window.location.href = 'index.html';
 })
 
 display()

@@ -6,7 +6,6 @@ const user = require('./route/authRouter')
 const app = express()
     // const cors = require('cors')
 
-
 app.use(express.static('./public'))
 app.use(express.json())
 
